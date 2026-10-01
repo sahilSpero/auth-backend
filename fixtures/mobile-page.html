@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phase 1 Fixture Page</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: sans-serif; width: 100%; }
+
+    .fixed-nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 56px; background: #111; color: #fff;
+      display: flex; align-items: center; padding: 0 16px;
+      z-index: 100;
+    }
+
+    /* Document-flow blocks — heights sum to exactly 2400px */
+    .hero       { height: 400px; background: #dbeafe; }
+    .features   { height: 400px; background: #dcfce7; }
+    .grid       { height: 800px; background: #fef9c3; }
+    .banner     { height: 300px; background: #fee2e2; }
+    .newsletter { height: 300px; background: #ede9fe; }
+    .footer     { height: 200px; background: #e5e7eb; }
+
+    section, header, footer, nav { display: block; padding: 24px 16px; }
+    .card { background: #fff; border: 1px solid #ddd; height: 160px; margin: 12px 0; padding: 12px; }
+    img { display: block; width: 64px; height: 64px; margin: 8px 0; }
+    a { color: #1d4ed8; }
+    button { padding: 8px 16px; margin: 8px 0; }
+    input { padding: 8px; width: 100%; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <!-- fixed element: overlays every section, not part of document flow -->
+  <nav class="fixed-nav" data-testid="FIXED_NAV">
+    <span>Demo Store</span>
+  </nav>
+
+  <header class="hero" id="hero" data-testid="HERO_BANNER">
+    <h1>Fixture Hero</h1>
+    <p>Hero copy for section-001 / section-002 overlap.</p>
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='64' height='64' fill='%233b82f6'/%3E%3C/svg%3E" alt="hero image" />
+    <a href="#grid">Shop now</a>
+  </header>
+
+  <section class="features" id="features" data-testid="FEATURE_LIST">
+    <h2>Features</h2>
+    <ul>
+      <li>Feature one</li>
+      <li>Feature two</li>
+      <li>Feature three</li>
+    </ul>
+    <button type="button">Learn more</button>
+  </section>
+
+  <section class="grid" id="grid" data-testid="PRODUCT_GRID_1">
+    <h2>Products</h2>
+    <div class="card" data-testid="PRODUCT_CARD_1"><h3>Product A</h3><p>$10</p></div>
+    <div class="card" data-testid="PRODUCT_CARD_2"><h3>Product B</h3><p>$20</p></div>
+    <div class="card" data-testid="PRODUCT_CARD_3"><h3>Product C</h3><p>$30</p></div>
+    <div class="card" data-testid="PRODUCT_CARD_4"><h3>Product D</h3><p>$40</p></div>
+  </section>
+
+  <section class="banner" id="promo" data-testid="PROMO_BANNER">
+    <h2>Promo</h2>
+    <p>Sale ends soon.</p>
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='64' height='64' fill='%23ef4444'/%3E%3C/svg%3E" alt="promo image" />
+  </section>
+
+  <section class="newsletter" id="newsletter" data-testid="NEWSLETTER_FORM">
+    <h2>Newsletter</h2>
+    <form>
+      <input type="email" placeholder="Email address" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer class="footer" id="footer" data-testid="FOOTER">
+    <p>&copy; Fixture Co.</p>
+    <a href="#hero">Back to top</a>
+  </footer>
+</body>
+</html>
